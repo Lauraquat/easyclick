@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<div class="container">
+    <div class="mt-5 contenu">
+        <h3 class="mb-4">Composition de votre panier</h3>
+
+        {% if panier|length > 0 %}
+            {% for item in panier %}
+                <div class="row contenu mt-2">
+                    {{ item.id }}
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Votre panier est vide</p>
+        {% endif %}
+
+        <a href="{{ path('valider') }}" class="mt-5 btn btn-style">Valider le panier</a>
+    </div>
+</div>
+
+{% endblock %}

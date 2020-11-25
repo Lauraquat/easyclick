@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-4 mt-5 contenu">
+            <h3>Le framboisier d'été 10€</h3>
+            <hr>
+            <p>Framboise - Vanille - Estragon </p>
+            <br />
+            <img src="{{ asset('images/desserts/framboisier.png') }}" alt="image framboisier">
+            <div>
+                <a href="{{ path('ajouter', {'id': "Le framboisier d'été 10€"}) }}" class="mt-2 btn btn-style">Ajouter</a>
+            </div>
+        </div>
+        <div class="col-4 mt-5 contenu">
+            <h3>Pulsion chocolatière 10€</h3>
+            <hr>
+            <p>Chocolat - Pistache - Cardamone Noir</p>
+            <br />
+            <img src="{{ asset('images/desserts/pulsion_chocolatiere.png') }}" alt="image pulsion_chocolatiere">
+            <div>
+                <a href="{{ path('ajouter', {'id': "Pulsion chocolatière 10€"}) }}" class="mt-4 btn btn-style">Ajouter</a>
+            </div>
+        </div>
+        <div class="col-4 mt-5 contenu">
+            <h3>Assiette de M. Seguin 12€</h3>
+            <hr>
+            <p>Assiette de fromages</p>
+            <img src="{{ asset('images/desserts/assiette_mr_seguin.png') }}" alt="image assiette_mr_seguin">
+            <div>
+                <a href="{{ path('ajouter', {'id': "Assiette de M. Seguin 12€"}) }}" class="mt-3 ml-5 btn btn-style">Ajouter</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

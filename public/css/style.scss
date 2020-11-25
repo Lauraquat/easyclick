@@ -1,0 +1,141 @@
+*{
+    box-sizing: border-box;
+}
+
+
+header{
+    background-color: black;
+}
+
+
+body{
+    margin: 0 auto;
+    background-color: black !important;
+}
+
+
+li{
+    list-style: none;
+}
+
+nav{
+    background-color: #b00054;
+    font-family: "Satisfy", cursive;
+    font-size: xx-large;
+}
+
+nav a{
+    color: black;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+nav li :hover{
+    text-decoration: none;
+    color: white;
+}
+
+
+.imgHeader{
+    width: 100%;
+}
+
+
+.logo{
+    padding: 20px;
+    width: 50px;
+}
+
+
+.panier{
+    margin-top: 30px;
+    float: right;
+    color: #b00054;
+    font-size: x-large;
+    font-weight: bold;
+    &:hover{
+        text-decoration: none;
+        color: white;
+    }
+    &_img{
+        width: 20%;
+    }
+    /*  TODO mettre tout à droite et chiffre à l'intérieur du panier */
+}
+
+
+h3{
+    font-family: "Satisfy", cursive;
+}
+
+
+h4{
+    color: #b00054;
+    font-size: 1.5rem;
+}
+
+
+.contenu{
+    color: white;
+    text-align: center;
+    justify-content: center;
+    &_vin{
+        margin-left: 200px;
+    }
+}
+
+
+.btn-plus{
+    width: 30px;
+}
+
+
+a{
+    text-decoration: none;
+    &.btn-style{
+        background-color: #b00054;
+        color: white;
+        padding : 5px 50px;
+        border-radius: 30px;
+        border: white 1px solid;
+    }
+}
+
+
+hr{
+    border-top: 2px solid !important;
+    width: 50%;
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+
+}
+
+.white{
+    color: white;
+}
+
+.footer{
+    background-color: #b00054;
+    margin-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 20px;
+    color : white;
+    &_avatar{
+        font-style: italic;
+        font-size: small;
+        float: right;
+        margin-right: 190px;
+    }
+    &_img{
+        z-index: 999;
+        margin-top: -302px;
+        width: 60%;
+    }
+    //TODO placer avatar tout à droite et citation juste à sa gauche, centré verticalement (et éventuellement sur 2 lignes)
+}

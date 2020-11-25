@@ -1,0 +1,43 @@
+{# <div class="container">
+ #}    <div class="row">
+        <div class="col-2 logo">
+            <img src="{{ asset('/images/logo.png') }}" alt="logo">
+        </div>
+        <div class="col-2">
+            <a href="{{ path('panier') }}" class="panier"><img src=" {{asset('/images/shopping-bag.png') }}" class="panier_img"  alt="panier"> {{ app.session.get('panier')|length }}</a>
+        </div>
+    </div>
+{# </div>
+ #}
+
+
+{% if imageVin is defined and imageVin %}
+    {% set image = asset('/images/cave.png') %}
+{% else %}
+    {% set image = asset('/images/restaurant.png') %}
+{% endif %}
+
+
+<img class="imgHeader" src="{{ image }}" alt="image header">
+
+<nav>
+    <div>
+        <ul>
+            <li>
+                <a href="{{ path('formules') }}">Les formules</a>
+            </li>
+            <li>
+                <a href="{{ path('entrees') }}">Entrées</a>
+            </li>
+            <li>
+                <a href="{{ path('plats') }}">Plats</a>
+            </li>
+            <li>
+                <a href="{{ path('desserts') }}">Desserts</a>
+            </li>
+            <li>
+                <a href="{{ path('boissons') }}">Les boissons</a>
+            </li>
+        </ul>
+    </div>
+</nav>

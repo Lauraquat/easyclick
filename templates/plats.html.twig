@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-4 mt-5 contenu">
+            <h3>Le terroir en fête 32€</h3>
+            <hr>
+            <p>Selle d'agneau - Chou rouge - Noisette</p>
+            <br /><br />
+            <img src="{{ asset('images/plats/terroir_en_fete.png') }}" alt="image de terroir_en_fete">
+            <div>
+                <a href="{{ path('ajouter', {'id': "Le terroir en fête 32€"}) }}" class="mt-3 btn btn-style">Ajouter</a>
+            </div>
+        </div>
+        <div class="col-4 mt-5 contenu">
+            <h3>Le poulailler en folie 27€</h3>
+            <hr>
+            <p>Volaille fermière - trompette de la mort</p>
+            <p>céleri rave - citron vert</p>
+            <img src="{{ asset('images/plats/poulailler_en_folie.png') }}" alt="image de poulailler_en_folie">
+            <div>
+                <a href="{{ path('ajouter', {'id': "Le poulailler en folie 27€"}) }}" class="mt-3 btn btn-style">Ajouter</a>
+            </div>
+        </div>
+        <div class="col-4 mt-5 contenu">
+            <h3>Le potager exotique 30€</h3>
+            <hr>
+            <p>Barbue - carotte - coques - yuzu </p>
+            <br />
+            <img src="{{ asset('images/plats/potager_exotique.png') }}" alt="image de potager_exotique.png">
+            <div>
+                <a href="{{ path('ajouter', {'id': "Le potager exotique 30€"}) }}" class="mt-4 btn btn-style">Ajouter</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
