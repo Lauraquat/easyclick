@@ -32,12 +32,10 @@ class Carte
      */
     private $Description;
 
-
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $Image;
-
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -55,11 +53,12 @@ class Carte
         return $this->id;
     }
 
-    
+
     public function getType(): ?string
     {
         return $this->Type;
     }
+
 
     public function setType(string $Type): self
     {
@@ -68,16 +67,17 @@ class Carte
         return $this;
     }
 
-    
+
     public function getIntitule(): ?string
     {
         return $this->Intitule;
     }
-    
+
+
     public function setIntitule(string $Intitule): self
     {
         $this->Intitule = $Intitule;
-        
+
         return $this;
     }
 
@@ -87,6 +87,7 @@ class Carte
         return $this->Description;
     }
 
+
     public function setDescription(string $Description): self
     {
         $this->Description = $Description;
@@ -94,12 +95,14 @@ class Carte
         return $this;
     }
 
+
     public function getImage(): ?string
     {
         return $this->Image;
     }
 
-    public function setImage(string $Image): self
+
+    public function setImage(?string $Image): self
     {
         $this->Image = $Image;
 
@@ -107,11 +110,11 @@ class Carte
     }
 
 
-    
     public function getPrix(): ?string
     {
         return $this->Prix;
     }
+
 
     public function setPrix(string $Prix): self
     {
@@ -126,10 +129,22 @@ class Carte
         return $this->Quantite;
     }
 
+
     public function setQuantite(string $Quantite): self
     {
         $this->Quantite = $Quantite;
 
         return $this;
+    }
+
+
+    public function destocke(int $quantite): void
+    {
+        // s'il n'y a pas assez de quantité, on lève une exception pour afficher un message d'erreur
+        if ($quantite > $this->Quantite) {
+            throw new \Exception('Veuillez réduire la quantité de '.$this->Intitule.'. Il ne reste que '.$this->Quantite.' quantité(s) en stock');
+        }
+
+        $this->Quantite -= $quantite;
     }
 }

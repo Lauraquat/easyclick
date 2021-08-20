@@ -3,14 +3,29 @@
 }
 
 
+html {
+    min-height: 100%;
+}
+
+
+@font-face {
+    font-family: Satisfy;
+    src: url("../fonts/Satisfy/Satisfy-Regular.ttf");
+}
+
+
 header{
     background-color: black;
 }
 
 
 body{
+    min-height: 100%;
+    height: 100%;
     margin: 0 auto;
     background-color: black !important;
+    position: relative;
+    padding-bottom: 100px; /** hauteur du footer + 30px */
 }
 
 
@@ -18,15 +33,18 @@ li{
     list-style: none;
 }
 
+
 nav{
     background-color: #b00054;
     font-family: "Satisfy", cursive;
     font-size: xx-large;
 }
 
+
 nav a{
     color: black;
 }
+
 
 nav ul{
     display: flex;
@@ -34,7 +52,9 @@ nav ul{
     padding: 10px 0;
 }
 
-nav li :hover{
+
+nav li :hover,
+nav li .active{
     text-decoration: none;
     color: white;
 }
@@ -61,14 +81,24 @@ nav li :hover{
         text-decoration: none;
         color: white;
     }
-    &_img{
-        width: 20%;
+    &_img {
+        width: 70px;
+        height: 70px;
     }
-    /*  TODO mettre tout à droite et chiffre à l'intérieur du panier */
+    &_compte{
+        position: absolute;
+        top: 24px;
+        left: 16px;
+        right: 0;
+        text-align: center;
+    }
+    width: 50px;
+    height: 50px;
+    position: relative;
 }
 
 
-h3{
+h3, .h3{
     font-family: "Satisfy", cursive;
 }
 
@@ -83,6 +113,7 @@ h4{
     color: white;
     text-align: center;
     justify-content: center;
+    align-content: flex-end; 
     &_vin{
         margin-left: 200px;
     }
@@ -94,15 +125,32 @@ h4{
 }
 
 
+.return{
+    width: 45px;
+}
+
+
 a{
     text-decoration: none;
-    &.btn-style{
-        background-color: #b00054;
+}
+
+
+.btn-style{
+    background-color: #b00054;
+    color: white;
+    padding : 5px 50px;
+    border-radius: 30px;
+    border: white 1px solid;
+    margin-top: 3rem;
+    &:hover{
+        text-decoration: none;
         color: white;
-        padding : 5px 50px;
-        border-radius: 30px;
-        border: white 1px solid;
     }
+}
+
+
+.pink{
+    color: #b00054;
 }
 
 
@@ -114,28 +162,37 @@ hr{
 
 }
 
-.white{
-    color: white;
+
+.img_chef {
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+    max-width: 10%;
+    z-index: 10;
 }
 
+
 .footer{
+    /** permet au footer de rester en bas de page */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 70px;
+    line-height: 70px;
     background-color: #b00054;
-    margin-top: 50px;
-    padding-top: 30px;
-    padding-bottom: 20px;
     text-align: center;
     font-size: 20px;
     color : white;
     &_avatar{
         font-style: italic;
         font-size: small;
-        float: right;
-        margin-right: 190px;
+        position: absolute;
+        right: 12%;
+        bottom: 0;
+        p {
+            line-height: 7px;
+        }
     }
-    &_img{
-        z-index: 999;
-        margin-top: -302px;
-        width: 60%;
-    }
-    //TODO placer avatar tout à droite et citation juste à sa gauche, centré verticalement (et éventuellement sur 2 lignes)
 }

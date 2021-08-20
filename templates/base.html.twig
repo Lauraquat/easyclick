@@ -8,42 +8,85 @@
             <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
             <link rel="stylesheet" href="{{ asset('css/style.css') }}">
             <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-            <link rel="preconnect" href="https://fonts.gstatic.com">
-            <link href="https://fonts.googleapis.com/css2?family=Nerko+One&family=Satisfy&display=swap" rel="stylesheet">
         {% endblock %}
 
     </head>
 
     <body>
-            
+
         <header>
-        
-        {% include "_header.html.twig" %}
-        
+            {% include "_header.html.twig" %}
         </header>
 
         {% block body %}
         {% endblock %}
 
 
+        {# MODALE CONFIRMATION #}
+        <div id="confirmation_modal" role="dialog" class="modal fade" data-backdrop="static"> <!-- data-backdrop="static" => oblige à cliquer sur un élément de la modale pour la fermer -->
+            <div class="modal-dialog modal-confirm container">
+                <div class="modal-content container">
+                    <div class="modal-header row justify-content-start">
+                        <div class="col-3">
+                            <button type="button" class="btn hide" aria-hidden="true">
+                                <img src="{{ asset('/images/prev.png') }}" class="img-fluid return"/>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="modal-body row justify-content-center">
+                        <h4 class="modal-title mb-4">Votre quantité</h4>
+                        <div class="row justify-content-center">
+                            <img src="{{ asset('/images/minus.png') }}" class="minus cursor-pointer img-fluid col-2"/>
+                            <input class="col-4 form-control form-rounded quantite" type="text" pattern="[0-9]*" value="1" />
+                            <img src="{{ asset('/images/plus.png') }}" class="plus img-fluid col-2 cursor-pointer"/>
+                            <p class="text mt-3 h3"></p>
+                            <input type="hidden" class="id" />
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button id="validation" type="button" class="btn-style ajout" data-url="{{ path('ajouter') }}">Ajouter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="success_modal" class="modal fade">
+            <div class="modal-dialog modal-confirm">
+                <div class="modal-content">
+                    <div class="modal-header justify-content-center text-success">
+                        <p>Merci, votre demande a bien été prise en compte.</p>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="error_modal" class="modal fade">
+            <div class="modal-dialog modal-confirm">
+                <div class="modal-content">
+                    <div class="modal-header justify-content-center text-danger">
+                        <p>Désolé, une erreur est survenue et votre demande n'a pas été prise en compte.</p>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# FIN MODALE #}
+
+
         {% block javascripts %}
-            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-{#             
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
- #}         
+            <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
             <script src="{{ asset('js/popper.min.js') }}"></script>
-{#             
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
- #}      
-            <script src="{{ asset('css/bootstrap.min.css') }}"></script>
+            <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+            <script src="{{ asset('js/modale.js') }}"></script>
 
         {% endblock %}
 
+        <img src="{{ asset('images/chef.png') }}" class="img_chef" alt="image du chef">
 
-        <footer>
-        
-        {% include "_footer.html.twig" %}
-
+        <footer class="footer">
+            {% include "_footer.html.twig" %}
         </footer>
     </body>
 </html>

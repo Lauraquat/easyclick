@@ -5,17 +5,23 @@
     <div class="mt-5 contenu">
         <h3 class="mb-4">Composition de votre panier</h3>
 
-        {% if panier|length > 0 %}
-            {% for item in panier %}
-                <div class="row contenu mt-2">
-                    {{ item.id }}
-                </div>
-            {% endfor %}
-        {% else %}
-            <p>Votre panier est vide</p>
-        {% endif %}
+        <div class="mb-5">
 
-        <a href="{{ path('valider') }}" class="mt-5 btn btn-style">Valider le panier</a>
+            {% for messageErreur in app.flashes('error') %}
+                <div class="text-danger">{{ messageErreur }}</div>
+            {% endfor %}
+
+            {% if panier|length > 0 %}
+                {% for item in panier %}
+                    <div class="row contenu mb-2">
+                        {{ item.intitule }} : quantité {{ item.quantite }} <a href="{{ path('retirer', {'id': item.id }) }}" class="pink">&emsp; Supprimer 1 quantité </a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>Votre panier est vide</p>
+            {% endif %}
+        </div>
+        <a href="{{ path('valider') }}"class="btn-style">Valider le panier</a>
     </div>
 </div>
 

@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Carte;
 
 class AppController extends AbstractController
 {
@@ -18,7 +20,7 @@ class AppController extends AbstractController
             'titre' => 'EasyClick',
         ]);
     }
-        
+
 
     /**
      * @Route("/entrees", name="entrees")
@@ -27,10 +29,11 @@ class AppController extends AbstractController
     {
         return $this->render('entrees.html.twig', [
             'titre' => 'EasyClick',
+            'entrees' => $this->getDoctrine()->getRepository(Carte::class)->findBy(['Type' => 'Entrées']),
         ]);
     }
-       
-    
+
+
     /**
      * @Route("/plats", name="plats")
      */
@@ -38,9 +41,12 @@ class AppController extends AbstractController
     {
         return $this->render('plats.html.twig', [
             'titre' => 'EasyClick',
+            'plats' => $this->getDoctrine()->getRepository(Carte::class)->findBy(['Type' => 'Plats']),
+
         ]);
     }
-        
+
+
     /**
      * @Route("/desserts", name="desserts")
      */
@@ -48,8 +54,11 @@ class AppController extends AbstractController
     {
         return $this->render('desserts.html.twig', [
             'titre' => 'EasyClick',
+            'desserts' => $this->getDoctrine()->getRepository(Carte::class)->findBy(['Type' => 'Desserts']),
+
         ]);
     }
+
 
     /**
      * @Route("/boissons", name="boissons")
@@ -58,26 +67,62 @@ class AppController extends AbstractController
     {
         return $this->render('boissons.html.twig', [
             'titre' => 'EasyClick',
+            'boissons' => $this->getDoctrine()->getRepository(Carte::class)->findBy(['Type' => 'Boissons']),
         ]);
     }
 
+
     /**
-     * @Route("/ajouter/{id}", name="ajouter")
+     * @Route("/ajouter/{id}", name="ajouter", defaults={"id":""})
      */
-    public function ajouter(SessionInterface $session, $id): Response
+    public function ajouter(Request $request, SessionInterface $session, $id): Response
     {
-        $cartIds = $session->get('panier' /* nom du paramètre */, [] /* valeur par défaut */);
-        $cartIds[] = $id; // on ajoute l'id du produit dans la variable
+        $cartIds = $session->get('panier', []);
+
+        if (array_key_exists($id, $cartIds)) {
+            // si le plat existait dans le panier, on y ajoute la quantité
+            $cartIds[$id]['quantite'] += $request->get('quantite');
+        } else {
+            // sinon, on ajoute le plat au panier
+            $cartIds[$id] = [
+                'id' => $id,
+                'quantite' => $request->get('quantite'),
+            ];
+        }
         $session->set('panier', $cartIds); // et on remet la variable en session
 
-        
-        return $this->redirectToRoute('formules'); 
-
-/*         // TODO rediriger vers la page d'où on vient => $request inconnue)
-        $referer = filter_var($request->headers->get('referer'), FILTER_SANITIZE_URL);
-        return $this->redirect($referer); 
- */        
+        if (!empty($referer = $request->headers->get('referer'))) {
+            return $this->redirect($referer);
+        } else {
+            return $this->redirectToRoute('formules');
+        }
     }
+
+
+    /**
+     * @Route("/retirer/{id}", name="retirer")
+     */
+    public function retirer(Request $request, SessionInterface $session, $id): Response
+    {
+        $cartIds = $session->get('panier', []);
+
+        // on retrouve le bon plat pour retirer 1 quantité (sauf si c'est déjà 0)
+        if (array_key_exists($id, $cartIds)) {
+            $quantite = $cartIds[$id]['quantite'] - 1;
+
+            if ($quantite == 0) {
+                // si la quantité tombe à 0, on retire le plat du panier
+                unset($cartIds[$id]);
+            } else {
+                $cartIds[$id]['quantite'] = $quantite;
+            }
+        }
+
+        $session->set('panier', $cartIds); // et on remet la variable en session
+
+        return $this->redirectToRoute('panier');
+    }
+
 
     /**
      * @Route("/panier", name="panier")
@@ -86,25 +131,41 @@ class AppController extends AbstractController
     {
         $panier = [];
 
-        foreach ($session->get('panier', []) as $id) {
-            $panier[] = ['id' => $id];
+        foreach ($session->get('panier', []) as $item) {
+            $item['intitule'] = $this->getDoctrine()->getRepository(Carte::class)->find($item['id'])->getIntitule();
+            $panier[] = $item;
         }
 
         return $this->render('panier.html.twig', [
             'panier' => $panier,
-        ]); 
+        ]);
     }
+
 
     /**
      * @Route("/valider", name="valider")
      */
     public function valider(SessionInterface $session): Response
     {
-        foreach ($session->get('panier', []) as $id) {
-            //TODO retirer de la bdd (1 ligne = 1 quantité)
-            //TODO + vider panier
+        try {
+            foreach ($session->get('panier', []) as $item) {
+                // récupère le plat du panier et retire la quantité du stock
+                $plat = $this->getDoctrine()->getRepository(Carte::class)->find($item['id']);
+
+                $plat->destocke($item['quantite']);
+            }
+
+        } catch (\Exception $e) {
+            // si un problème de quantité survient, on réaffiche le panier avec un message d'erreur
+            $this->addFlash('error', $e->getMessage());
+            return $this->redirectToRoute('panier');
         }
 
-        return $this->render('panier-valide.html.twig'); 
+
+        // tout s'est bien passé, on vide le panier, on met à jour la bdd et on renvoie vers la page de confirmation
+        $session->set('panier', []);
+        $this->getDoctrine()->getManager()->flush();
+
+        return $this->render('panier-valide.html.twig');
     }
 }

@@ -1,10 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{# Permet de définir une image différente dans le header (paramétré dans "base.html.twig") #}
 {% set imageVin = true %}
 
 {% block body %}
-
-
         <div class="col-12 mt-5 contenu">
             <div class="contenu_vin">
                 <h3>Les Blancs</h3>
@@ -14,42 +13,42 @@
                 </div>
                     <div class="row">
                         <div class="row col-5">
-                            <p>2014 Muscadet de Sèvre et Maine Goulaine AOC Domaine de la Grange (Loire)</p> 
+                            <p class="mt-1">2014 Muscadet de Sèvre et Maine Goulaine AOC Domaine de la Grange (Loire)</p> 
                         </div>
-                        <div class="row offset-2 col-1">44€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': "2014 Muscadet de Sèvre et Maine Goulaine AOC Domaine de la Grange 44€"}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">44€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
 
                     <div class="row">
                         <div class="row col-5">
-                            <p>2017 Clos Henri Sauvignon Blanc, Marlborough, H. Bourgeois (Nouvelle Zélande)</p> 
+                            <p class="mt-1">2017 Clos Henri Sauvignon Blanc, Marlborough, H. Bourgeois (Nouvelle Zélande)</p> 
                         </div>
-                        <div class="row offset-2 col-1">50€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 13}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">50€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
                
                     <div class="row">
                         <div class="row col-5">
-                            <p>2017 Montagny 1er Cru Les Bassets AOC Domaine Laurent Cognard (Bourgogne)</p> 
+                            <p class="mt-1">2017 Montagny 1er Cru Les Bassets AOC Domaine Laurent Cognard (Bourgogne)</p> 
                         </div>
-                        <div class="row offset-2 col-1">56€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 14}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">56€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
 
                     <div class="row">
                         <div class="row col-5">
-                            <p>2017 Sancerre AOC La Poussie (Loire)</p> 
+                            <p class="mt-1">2017 Sancerre AOC La Poussie (Loire)</p> 
                         </div>
-                        <div class="row offset-2 col-1">58€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 15}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">58€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
 
                     <div class="row">
                         <div class="row col-5">
-                            <p>2010 Domaine de Baal Vallée de la Bekaa (Liban)</p>
+                            <p class="mt-1">2010 Domaine de Baal Vallée de la Bekaa (Liban)</p>
                         </div>
-                        <div class="row offset-2 col-1">65€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 16}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">65€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
 
 
@@ -58,26 +57,26 @@
                 </div>
                     <div class="row">
                         <div class="row col-5">
-                            <p>2017 Riesling Grand Cru Schoenenbourg AOC Domaine Edmond Rentz (Alsace)</p> 
+                            <p class="mt-1">2017 Riesling Grand Cru Schoenenbourg AOC Domaine Edmond Rentz (Alsace)</p> 
                         </div>
-                        <div class="row offset-2 col-1">48€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 17}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">48€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
 
                     <div class="row">
                         <div class="row col-5">
-                            <p>2018 Crozes Hermitage AOC on the Road Again J.Pilon (Rhône Septentrional)</p> 
+                            <p class="mt-1">2018 Crozes Hermitage AOC on the Road Again J.Pilon (Rhône Septentrional)</p> 
                         </div>
-                        <div class="row offset-2 col-1">48€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 18}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">48€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
 
                     <div class="row">
                         <div class="row col-5">
-                            <p>2016 Les Renardières 5 Grammes Domaine P. Gilbert (Loire)</p> 
+                            <p class="mt-1">2016 Les Renardières 5 Grammes Domaine P. Gilbert (Loire)</p> 
                         </div>
-                        <div class="row offset-2 col-1">49€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 19}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">49€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
 
 
@@ -86,42 +85,42 @@
                 </div>
                     <div class="row">
                         <div class="row col-5">
-                            <p>2017 Domaine Benastra Côtes du Roussillon (Roussillon)</p> 
+                            <p class="mt-1">2017 Domaine Benastra Côtes du Roussillon (Roussillon)</p> 
                         </div>
-                        <div class="row offset-2 col-1">49€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 20}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">49€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
                     
                     <div class="row">
                         <div class="row col-5">
-                            <p>2017 Mayol Tradition AOC Domaine Laurent Cognard (Luberon)</p> 
+                            <p class="mt-1">2017 Mayol Tradition AOC Domaine Laurent Cognard (Luberon)</p> 
                         </div>
-                        <div class="row offset-2 col-1">54€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 22}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">54€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
                     
                     <div class="row">
                         <div class="row col-5">
-                            <p>2018 Pouilly Fumé AOC Domaine Ladoucette (Loire)</p> 
+                            <p class="mt-1">2018 Pouilly Fumé AOC Domaine Ladoucette (Loire)</p> 
                         </div>
-                        <div class="row offset-2 col-1">55€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 23}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">55€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
         
                     <div class="row">
                         <div class="row col-5">
-                            <p>2017 Vénus Blanche Côtes du Rhône AOC (Rhône Septentrional)</p> 
+                            <p class="mt-1">2017 Vénus Blanche Côtes du Rhône AOC (Rhône Septentrional)</p> 
                         </div>
-                        <div class="row offset-2 col-1">56€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 24}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">56€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
 
                     <div class="row">
                         <div class="row col-5">
-                            <p>2016 Meursault AOC Domaine de La Galopière (AOC Bourgogne)</p> 
+                            <p class="mt-1">2016 Meursault AOC Domaine de La Galopière (AOC Bourgogne)</p> 
                         </div>
-                        <div class="row offset-2 col-1">65€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 25}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">65€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
 
 
@@ -132,34 +131,34 @@
                 </div>
                     <div class="row">
                         <div class="row col-5">
-                            <p>2015 Menetou Salon les Renardières AOC Domaine P. Gilbert (Loire)</p> 
+                            <p class="mt-1">2015 Menetou Salon les Renardières AOC Domaine P. Gilbert (Loire)</p> 
                         </div>
-                        <div class="row offset-2 col-1">49€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 26}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">49€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
 
                     <div class="row">
                         <div class="row col-5">
-                            <p>2017 Pernand Vergelesse AOC Domaine Rollin (Bourgogne)</p> 
+                            <p class="mt-1">2017 Pernand Vergelesse AOC Domaine Rollin (Bourgogne)</p> 
                         </div>
-                        <div class="row offset-2 col-1">50€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 27}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">50€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
 
                     <div class="row">
                         <div class="row col-5">
-                            <p>2015 Pinot Noir Clos Henri, Malborough, H . Bourgeois (Nouvelle Zélande)</p> 
+                            <p class="mt-1">2015 Pinot Noir Clos Henri, Malborough, H . Bourgeois (Nouvelle Zélande)</p> 
                         </div>
-                        <div class="row offset-2 col-1">50€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 28}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">50€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
 
                     <div class="row">
                         <div class="row col-5">
-                            <p>2007 Château Les Ormes Sorbet AOC Médoc (Bordeaux)</p> 
+                            <p class="mt-1">2007 Château Les Ormes Sorbet AOC Médoc (Bordeaux)</p> 
                         </div>
-                        <div class="row offset-2 col-1">55€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 29}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">55€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
 
                 <div class="row">
@@ -167,42 +166,42 @@
                 </div>
                     <div class="row">
                         <div class="row col-5">
-                            <p>2016 Domaine Benastra Côtes du Roussillon AOP (Roussillon)</p> 
+                            <p class="mt-1">2016 Domaine Benastra Côtes du Roussillon AOP (Roussillon)</p> 
                         </div>
-                        <div class="row offset-2 col-1">48€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 30}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">48€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
 
                     <div class="row">
                         <div class="row col-5">
-                            <p>2015 Emotion Domaine Mayol AOC (Luberon)</p> 
+                            <p class="mt-1">2015 Emotion Domaine Mayol AOC (Luberon)</p> 
                         </div>
-                        <div class="row offset-2 col-1">51€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 32}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">51€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
 
                     <div class="row">
                         <div class="row col-5">
-                            <p>2016 Langhe Nebbiolo DOC Pira Luigi, Serralunga D’Alba (Piémont Italie)</p> 
+                            <p class="mt-1">2016 Langhe Nebbiolo DOC Pira Luigi, Serralunga D’Alba (Piémont Italie)</p> 
                         </div>
-                        <div class="row offset-2 col-1">52€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 33}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">52€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
 
                     <div class="row">
                         <div class="row col-5">
-                            <p>2017 Mercurey Les 2 Terres AOC Domaine L. Cognard (Bourgogne)</p> 
+                            <p class="mt-1">2017 Mercurey Les 2 Terres AOC Domaine L. Cognard (Bourgogne)</p> 
                         </div>
-                        <div class="row offset-2 col-1">54€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 34}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">54€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
 
                     <div class="row">
                         <div class="row col-5">
-                            <p>2014 Pavillon de Léoville Poyférré AOC Saint Julien (Bordeaux)</p> 
+                            <p class="mt-1">2014 Pavillon de Léoville Poyférré AOC Saint Julien (Bordeaux)</p> 
                         </div>
-                        <div class="row offset-2 col-1">68€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 35}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">68€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
               
                 <div class="row">
@@ -210,26 +209,26 @@
                 </div>
                     <div class="row">
                         <div class="row col-5">
-                            <p>2016 Barbera Superiore DOC Pira Luigi, Serralunga D’Alba (Piémont Italie)</p> 
+                            <p class="mt-1">2016 Barbera Superiore DOC Pira Luigi, Serralunga D’Alba (Piémont Italie)</p> 
                         </div>
-                        <div class="row offset-2 col-1">52€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 36}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">52€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
             
                     <div class="row">
                         <div class="row col-5">
-                            <p>2014 Cornas AOC Les Arènes Maison Chapoutier (Rhône Septentrional)</p> 
+                            <p class="mt-1">2014 Cornas AOC Les Arènes Maison Chapoutier (Rhône Septentrional)</p> 
                         </div>
-                        <div class="row offset-2 col-1">60€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 37}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">60€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
                      
                     <div class="row">
                         <div class="row col-5">
-                            <p>2011 Domaine de Baal Vallée de la Bekaa (Liban)</p> 
+                            <p class="mt-1">2011 Domaine de Baal Vallée de la Bekaa (Liban)</p> 
                         </div>
-                        <div class="row offset-2 col-1">65€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 38}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">65€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
 
 
@@ -237,42 +236,42 @@
                 <hr>
                     <div class="row">
                         <div class="row col-5">
-                            <p>Vittel 50cl</p> 
+                            <p class="mt-1">Vittel 50cl</p> 
                         </div>
-                        <div class="row offset-2 col-1">4.50€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 39}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">4.50€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
 
                     <div class="row">
                         <div class="row col-5">
-                            <p>Vittel 1l</p> 
+                            <p class="mt-1">Vittel 1l</p> 
                         </div>
-                        <div class="row offset-2 col-1">7.00€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 40}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">7.00€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
 
                     <div class="row">
                         <div class="row col-5">
-                            <p>San Pellegrino 50cl</p> 
+                            <p class="mt-1">San Pellegrino 50cl</p> 
                         </div>
-                        <div class="row offset-2 col-1">4.50€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 41}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">4.50€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
 
                     <div class="row">
                         <div class="row col-5">
-                            <p>San Pellegrino 1l</p> 
+                            <p class="mt-1">San Pellegrino 1l</p> 
                         </div>
-                        <div class="row offset-2 col-1">7.00€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 42}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">7.00€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
 
                     <div class="row">
                         <div class="row col-5">
-                            <p>Châteldon 75cl</p> 
+                            <p class="mt-1">Châteldon 75cl</p> 
                         </div>
-                        <div class="row offset-2 col-1">7.00€</div>
-                        <div class="row col-1"><a href="{{ path('ajouter', {'id': 43}) }}" class="mt-3 btn"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
+                        <div class="row offset-2 col-1 mt-1">7.00€</div>
+                        <div class="row col-1"><a href="#"><img class=" btn-plus" src="{{ asset('images/plus.png') }}" alt="ajout"></a></div>
                     </div>
                 </div>
             </div>

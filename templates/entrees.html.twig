@@ -3,33 +3,17 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-4 mt-5 contenu">
-            <h3>La flamme de l'Océan 17€</h3>
-            <hr>
-            <p>Rouget - Betterave - hibiscus </p>
-            <img src="{{ asset('images/entrees/flamme_de_locean.png') }}" alt="image de flamme_de_locean">
-            <div>
-                <a href="{{ path('ajouter', {'id': "La flamme de l'Océan 17€"}) }}" class="mt-3 btn btn-style">Ajouter</a>
+        {% for entree in entrees %}
+            <div class="col-4 mt-5 contenu">
+                <h3>{{ entree.Intitule }} - {{ entree.Prix }}€</h3>
+                <hr>
+                <p>{{ entree.Description }}</p>
+                <img src="{{ asset(entree.Image) }}" alt="image de {{ entree.Intitule }}">
+                <button data-id="{{ entree.id }}" type="button" class="btn-style" data-target="#confirmation_modal" data-toggle="modal">Ajouter</button>
             </div>
-        </div>
-        <div class="col-4 mt-5 contenu">
-            <h3>La campagne Flamande 15€</h3>
-            <hr>
-            <p>Poitrine de porc - oignons - tamarin</p>
-            <img src="{{ asset('images/entrees/campagne_flamande.png') }}" alt="image de campagne_flamande">
-            <div>
-                <a href="{{ path('ajouter', {'id': "La campagne Flamande 15€"}) }}" class="mt-3 btn btn-style">Ajouter</a>
-            </div>
-        </div>
-        <div class="col-4 mt-5 contenu">
-            <h3>Le panache de la mer 19€</h3>
-            <hr>
-            <p>Langoustine - comcombre - pamplemousse </p>
-            <img src="{{ asset('images/entrees/panache_de_la_mer.png') }}" alt="image de panache_de_la_mer">
-            <div>
-                <a href="{{ path('ajouter', {'id': "Le panache de la mer 19€"}) }}" class="mt-3 btn btn-style">Ajouter</a>
-            </div>
-        </div>
+        {% else %}
+            <div class="col contenu">Désolé nous n'avons pas d'entrée à vous proposer.</div>
+        {% endfor %}
     </div>
 </div>
 
