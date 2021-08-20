@@ -29,12 +29,12 @@ Ce projet nécessite les composants suivants :
 3. Créez quelques éléments afin de générer le contenu de la base de données (en cliquant sur "add carte")
     Exemple de saisie pour une entrée :
 
-    Type = Entrées  (les types acceptés sont : Entrées, Plats, Desserts, Boissons)
-    Intitulé = La flamme de l'Océan
-    Description = Rouget - Betterave hibiscus
-    Image = (utiliser par exemple l'url d'une image publique sur internet)
-    Prix = 17
-    Quantité = 15
+    * Type = Entrées  (les types acceptés sont : Entrées, Plats, Desserts, Boissons)
+    * Intitulé = La flamme de l'Océan
+    * Description = Rouget - Betterave hibiscus
+    * Image = (utiliser par exemple l'url d'une image publique sur internet)
+    * Prix = 17
+    * Quantité = 15
 
     **Note : la liaison n'a pas été créée en base de donnée pour les formules et les boissons. Si vous créez un produit de type Boissons, vous ne pourrez pas l'ajouter au panier. Dans le code, ces 2 pages sont statiques.**
 
