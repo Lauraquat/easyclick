@@ -6,7 +6,6 @@ Ce projet nécessite les composants suivants :
 - php 7.4.3
 - mysql 8
 - L'utilitaire symfony (https://symfony.com/download)
-- npm 7.15 (pour installer npm : https://www.npmjs.com/get-npm)
 - composer (pour installer composer : https://getcomposer.org/)
 - git
 
@@ -17,10 +16,9 @@ Ce projet nécessite les composants suivants :
 
 ## Installation de Symfony
 
-1. Installez les dépendances php du projet : `composer install`
-2. Installez les dépendances css/js du projet : `npm install` 
-3. Spécifiez vos variables d'environnement : `cp .env.dist .env.local` puis éditez le fichier `.env.local` pour spécifier votre login et mot de passe mysql
-4. Créez la base de données : `bin/console doctrine:database:create && bin/console doctrine:schema:update --force`
+1. Installez les dépendances php du projet : `composer install` 
+2. Spécifiez vos variables d'environnement : `cp .env.dist .env.local` puis éditez le fichier `.env.local` pour spécifier votre login et mot de passe mysql
+3. Créez la base de données : `bin/console doctrine:database:create && bin/console doctrine:schema:update --force`
 
 ## Testez
 
